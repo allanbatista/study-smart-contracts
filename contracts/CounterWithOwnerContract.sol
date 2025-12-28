@@ -14,18 +14,21 @@ contract CounterWithOwnerContract {
         is_running = true;
     }
 
+    modifier onlyOwner() {
+        require(owner == msg.sender, 'owner is required');
+        _;
+    }
+
     function increment() public {
         require(is_running, 'was paused by owner');
         counter += 1;
     }
 
-    function reset() public {
-        require(owner == msg.sender, 'owner is required');
+    function reset() public onlyOwner {
         counter = 0;
     }
 
-    function toggle_pause() public {
-        require(owner == msg.sender, 'owner is required');
+    function toggle_pause() public onlyOwner {
         is_running = !is_running;
     }
 }
