@@ -13,7 +13,7 @@
 
 2. **Whitelist / Allowlist**
 
-* **Objective:** Owner adds/removes addresses to a whitelist; only whitelisted addresses can perform
+* **Objective:** Owner adds/removes addresses to a allowed_list; only allowed_list addresses can perform
   a restricted action (e.g., participate in an early sale, vote on proposals, or access beta features).
 * **Key Concepts:**
     - Whitelist: A mapping of approved addresses; acts as a permission list.
